@@ -3,11 +3,17 @@ import Wrapper from "../Wrapper/Wrapper";
 import PhoneImg from "../../assets/payment-phone.png";
 import CardImg from "../../assets/payment-card.png";
 import TickImg from "../../assets/payment-tick.svg";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 function PaymentSection() {
+  useEffect(()=> {
+    Aos.init({duration: 1000});
+  })
   return (
     <section className="payment">
       <Wrapper className='payment__container'>
-        <div className="payment__left">
+        <div className="payment__left" data-aos='fade-right'>
           <h3>Enjoy online payment with our smart digital card</h3>
           <p>But her ready least set lived spite solid. September how men saw tolerably two behavior arranging. She offices for highest and replied one venture pasture. Applauded no discovery in newspaper allowance am northward.</p>
 
@@ -28,7 +34,7 @@ function PaymentSection() {
           </div>
         </div>
 
-        <div className="payment__right">
+        <div className="payment__right" data-aos='fade-left'>
           <img src={PhoneImg} className="img-1" alt="" />
           <img src={CardImg} className="img-2" alt="" />
 

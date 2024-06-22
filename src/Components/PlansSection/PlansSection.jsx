@@ -4,15 +4,20 @@ import Tick from "../../assets/plans-tick.svg";
 import Img1 from "../../assets/plan-1.jpg";
 import Img2 from "../../assets/plan-2.jpg";
 import Img3 from "../../assets/plan-3.jpg";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 function PlansSection() {
+  useEffect(()=> {
+    Aos.init({duration: 1000});
+  })
   return (
     <section className='plans'>
       <Wrapper>
-        <h3>Choose a plan for your budget</h3>
+        <h3 data-aos='fade-up'>Choose a plan for your budget</h3>
 
         <div className="plans__container">
-          <div className="plans__card">
+          <div className="plans__card" data-aos='fade-right'>
             <div className="plans__card-left">
               <div className="plans__card-features">
                 <img src={Tick} alt="" />
@@ -38,7 +43,7 @@ function PlansSection() {
               </div>
             </div>
           </div>
-          <div className="plans__card">
+          <div className="plans__card" data-aos='fade-left'>
             <div className="plans__card-left">
               <div className="plans__card-features">
                 <img src={Tick} alt="" />
@@ -64,7 +69,7 @@ function PlansSection() {
               </div>
             </div>
           </div>
-          <div className="plans__card">
+          <div className="plans__card" data-aos='fade-right'>
             <div className="plans__card-left">
               <div className="plans__card-features">
                 <img src={Tick} alt="" />
@@ -91,7 +96,7 @@ function PlansSection() {
             </div>
           </div>
 
-          <div className="plans__last-card">
+          <div className="plans__last-card" data-aos='fade-left'>
             <h3>Custom Plan</h3>
             <a href="#" className='button-outline-2'>Fill out our form for your custom plan</a>
           </div>

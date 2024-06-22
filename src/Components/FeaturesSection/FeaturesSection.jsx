@@ -6,17 +6,22 @@ import Img3 from "../../assets/feature-3.svg";
 import Img4 from "../../assets/feature-4.svg";
 import Img5 from "../../assets/feature-5.svg";
 import Img6 from "../../assets/feature-6.svg";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 function FeaturesSection() {
+  useEffect(()=> {
+    Aos.init({duration: 1000});
+  })
   return (
     <section className='features'>
       <Wrapper>
-        <div className="features__text">
+        <div className="features__text" data-aos='fade-up'>
           <h3>Explore our amazing features</h3>
           <p>Lose john poor same it case do year we Full how way even the sigh Extremely nor furniture fat questions now provision incommode.</p>
         </div>
 
-        <div className="features__container">
+        <div className="features__container" data-aos='fade-up'>
           <div className="features__feature dark-feature">
             <img src={Img1} alt="" />
             <h4 className='dark-feature-title'>Free Enrollment</h4>

@@ -3,12 +3,17 @@ import Wrapper from "../Wrapper/Wrapper";
 import Img1 from "../../assets/hero-1.png"
 import Img2 from "../../assets/hero-2.png"
 import Img3 from "../../assets/hero-3.png"
-
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 function Hero() {
+  useEffect(()=> {
+    Aos.init({duration: 1000});
+  })
   return (
     <section className="hero">
       <Wrapper className="hero__container">
-        <div className="hero__left">
+        <div className="hero__left" data-aos='zoom-in-up'>
           <h1>Make payment easy, simplify your finance</h1>
           <p>Explain propriety off out perpetual his you. Feel sold off felt nay rose met you. We so entreaties cultivated astonished is. Offered chiefly farther of my no colonel shyness. Such on help me some door if in.</p>
 
@@ -19,7 +24,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="hero__right">
+        <div className="hero__right" data-aos="fade-left">
           <img src={Img1} className="img-1" alt="" />
           <img src={Img2} className="img-2" alt="" />
           <img src={Img3} className="img-3" alt="" />
